@@ -1,22 +1,25 @@
-import React, { useState } from 'react';
- 
- 
-const App = () => {
-    let time = new Date().toLocaleTimeString();
-    
-    const [count, setCount] = useState(time);
-    const UpdateTime = () => {
-        time = new Date().toLocaleTimeString();
-        setCount(time);
-    };
-    setInterval(UpdateTime,1000)
-    return(
-        <>
-<div className="container">
-        <h1 className="heading">{time}</h1>
-      
-      </div>           
-        </> 
-    );
-};    
-export default App;
+import React, { useState } from 'react'
+
+
+export default function InsNum()  
+{
+  const Time = new Date().toLocaleTimeString();
+  const state = useState();
+  const [Timezone,setTimezone] = useState(0)
+  const TimeFun = () => {
+    setTimezone(Time)
+    console.log(Time)
+  }
+  return (
+    <>
+    <div className="container">
+        <h1 className="heading">{Time}</h1>
+        <button onClick={TimeFun} className="btn">
+          Click Me
+        </button>
+      </div>
+        
+        
+    </>
+  )
+}
